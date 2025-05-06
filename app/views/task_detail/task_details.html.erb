@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<h1><%= @task_info.title %></h1>
+<p><%= @task_info.details %></p>
+<% if @task_info.completed %>
+<input type="checkbox" checked><%= "This task is completed" if @task_info.completed %><br/>
+
+<% else %>
+<input type="checkbox"><%= "This task is not completed yet"%><br/>
+
+<%end%>
+<%= link_to 'Back to list', '/tasks'%>
+</body>
+</html>

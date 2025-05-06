@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>My tasks</h1>
+ <ul>
+  <% @tasks.each_with_index do |task, index| %>
+    <% if task.completed%>
+    <input type="checkbox" id=<%= task.title %> checked=<%= task.completed%>><%= link_to task.title, "task_details/#{index}" %><br/>
+    <% else %>
+    <input type="checkbox" id=<%= task.title %>><%= link_to task.title, "task_details/#{index}" %><br/>
+    <%end%>
+  <% end %>
+</ul>
+</body>
+</html>
